@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api"
+const BASE_URL = "http://127.0.0.1:5000/api";
 
 function createCupcakeList(cupcake){
     return `<div data-cupcake-id=${cupcake.id}>
@@ -28,9 +28,8 @@ $("#newCupcake").on("submit", async function(evt){
 
     let flavor = $("#flavor").val();
     let rating = $("#rating").val();
-    let size = $("#size").val()
-    let image = $("#image").val()
-
+    let size = $("#size").val();
+    let image = $("#image").val();
     const newCupcakeResponse = await axios.post(`${BASE_URL}/cupcakes`,{
         flavor,
         rating,
