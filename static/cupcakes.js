@@ -18,7 +18,7 @@ async function showCupcakes(){
 
     for (let cupcakeData of response.data.cupcakes){
         let newCupcake = $(createCupcakeList(cupcakeData));
-        $("#cupcakes").append(newCupcake);
+        $("#cupcakes-list").append(newCupcake);
     }
 
 }
@@ -37,11 +37,11 @@ $("#newCupcake").on("submit", async function(evt){
         image
     });
     let newCupcake = $(createCupcakeList(newCupcakeResponse.data.cupcake));
-    $("#cupcakes").append(newCupcake);
+    $("#cupcakes-list").append(newCupcake);
     $("#newCupcake").trigger("reset");
 });
 
-$("#cupcakes").on("click", ".delete-button", async function (evt) {
+$("#cupcakes-list").on("click", ".delete-button", async function (evt) {
     evt.preventDefault();
     let $cupcake = $(evt.target).closest("div");
     let cupcakeId = $cupcake.attr("data-cupcake-id");
